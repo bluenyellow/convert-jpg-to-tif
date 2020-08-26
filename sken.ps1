@@ -1,6 +1,13 @@
+<#
+
+Objective was converting appeared scans(jpegs) from printer to tif.
+
+#>
+
+
 [Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms')
 
-net use H: \\intraserver\heliosscan\NOVE
+net use H: \\path\to\folder
 cd H:\
 $cesta = pwd | Select -expandproperty path
 
@@ -22,11 +29,11 @@ foreach($jpg in $jpgs){
 
 }
 
-#$picture.Dispose()
+
 cd C:\
 
 
-#vymazanie starych jpgov
+#deleting the old jpegs
 $jpgs | Remove-item -force
 
 #net use H: /delete 
