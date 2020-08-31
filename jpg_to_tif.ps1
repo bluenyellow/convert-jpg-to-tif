@@ -4,7 +4,7 @@
 Only $path variable needs to be changed.
 
 User case scenario:
-Objective:
+
 Multiple people in office scan to folder(5 people), and jpgs files need to be converted to tif. 
 Run this script from task Scheduler every minute
 #>
