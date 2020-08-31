@@ -5,7 +5,7 @@ Objective was converting appeared scans(jpegs) from printer to tif.
 #>
 
 
-[Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms')
+Add-Type -AssemblyName System.Windows.Forms
 
 net use H: \\path\to\folder
 cd H:\
