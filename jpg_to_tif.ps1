@@ -1,7 +1,12 @@
 <#
 
-Objective was converting appeared scans(jpegs) from printer to tif.
 
+Only $path variable needs to be changed.
+
+User case scenario:
+Objective:
+Multiple people in office scan to folder(5 people), and jpgs files need to be converted to tif. 
+Run this script from task Scheduler every minute
 #>
 
 
@@ -13,7 +18,7 @@ $path='C:\path\to\folder\'
 #using regex to parse jpgs with name in form scan or sken with numbers after it
 $jpgs = get-childitem $path -recurse | where {$_.Extension -match "jpg"} | Where ({$_.Name -match '^scan\d+' -or $_.Name -match '^sken\d+'})
 
-Start-Sleep -s 5 #wait 5 seconds if any jpgs appear from printer...
+Start-Sleep -s 5          #wait 5 seconds if any jpgs appear from printer...
 
 #in jpgs2 we parse jpgs files again
 $jpgs2 = get-childitem $path -recurse | where {$_.Extension -match "jpg"} | Where ({$_.Name -match '^scan\d+' -or $_.Name -match '^sken\d+'})
